@@ -1,0 +1,29 @@
+{
+  "extends": ["airbnb-base"],
+  "plugins": ["import"],
+  "parser": "babel-eslint",
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "arrow-parens": "off",
+    "comma-dangle": 0,
+    "linebreak-style": 0,
+    "import/no-dynamic-require": "off",
+    "import/no-extraneous-dependencies": "off",
+    "arrow-body-style": "off",
+    "consistent-return": 0,
+    "no-restricted-globals": 0
+  }
+}
