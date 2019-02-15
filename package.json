@@ -1,0 +1,31 @@
+{
+  "name": "Register-Login-App",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/knite51/Express-Sequelize-Postgres-LoginRegister-backend.git",
+  "author": "kNiteDeveloper",
+  "scripts": {
+    "dev": "babel-watch --watch ./ server.js || true",
+    "start": "npm run build && node ./build/server.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "pg": "^7.8.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-watch": "^2.0.7",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0"
+  }
+}
