@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-import { homeRouter } from './routes';
+import { homeRouter, userRouter } from './routes';
 
 dotenv.config();
 
@@ -17,5 +17,6 @@ const baseRoute = '/resfulApi';
 
 // connect with routes
 app.use(`${baseRoute}/`, homeRouter);
+app.use(`${baseRoute}/users`, userRouter);
 
 export default app;
