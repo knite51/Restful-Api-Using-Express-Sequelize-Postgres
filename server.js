@@ -1,10 +1,7 @@
-const express = require('express');
+// eslint-disable-next-line import/no-named-as-default
+import app from './app';
 
-const app = express();
-
-const port = 7000;
-
-app.get('/', (req, res) => res.send('Sup World'));
+const port = process.env.PORT || 7000;
 
 app.listen(port, () =>
   // eslint-disable-next-line no-console
