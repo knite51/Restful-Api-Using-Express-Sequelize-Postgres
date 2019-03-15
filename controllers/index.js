@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/prefer-default-export
-export { default as userController } from './user';
+export { default as userController } from './users';
