@@ -4,6 +4,7 @@
   "main": "server.js",
   "repository": "https://github.com/knite51/Restful-Api-Using-Express-Sequelize-Postgres.git",
   "author": "kNiteDeveloper",
+  "license": "MIT",
   "scripts": {
     "dev": "babel-watch --watch ./ server.js || true",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",

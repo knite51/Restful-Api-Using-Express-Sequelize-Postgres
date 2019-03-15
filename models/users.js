@@ -9,7 +9,7 @@ const UserModel = (sequelize, DataTypes) => {
         primaryKey: true,
         unique: true,
         allowNull: false,
-        defaultValue: DataTypes.UUID4
+        defaultValue: DataTypes.UUIDV4
       },
       email: {
         type: DataTypes.STRING,
