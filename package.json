@@ -6,7 +6,7 @@
   "author": "kNiteDeveloper",
   "license": "MIT",
   "scripts": {
-    "dev": "babel-watch --watch ./ server.js || true",
+    "dev": "nodemon node_modules/babel-watch ./ server.js",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",
     "undo:migration": "node_modules/.bin/sequelize db:migrate:undo:all",
     "start": "npm run build && node ./build/server.js"
@@ -32,6 +32,7 @@
     "babel-watch": "^2.0.7",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0"
+    "eslint-plugin-import": "^2.11.0",
+    "nodemon": "^1.18.10"
   }
 }
