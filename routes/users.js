@@ -1,8 +1,20 @@
 import express from 'express';
 
 import { userController } from '../controllers';
+import { userValidation } from '../middlewares';
 
 const router = express.Router();
+
+const {
+  checkRequiredUserFields,
+  checkEmptyUserFields,
+  checkIfIdentifierIsInUse,
+  checkIfUserExists,
+  ensureUserParamIsValid,
+  validatePassword,
+  validateEmail,
+  validateUsername
+} = userValidation;
 
 const {
   createUser,
@@ -12,14 +24,30 @@ const {
   deleteUser
 } = userController;
 
-router.route('/register').post(createUser);
+router
+  .route('/register')
+  .post(
+    checkRequiredUserFields,
+    checkEmptyUserFields,
+    validateUsername,
+    validateEmail,
+    checkIfIdentifierIsInUse,
+    validatePassword,
+    createUser
+  );
 
 router.route('/allUsers').get(getAllUsers);
 
-router.route('/:id').get(getOneUser);
-
-router.route('/:id').patch(updateUserDetails);
-
-router.route('/:id').delete(deleteUser);
+router
+  .route('/:id')
+  .all(ensureUserParamIsValid, checkIfUserExists)
+  .get(getOneUser)
+  .patch(
+    validateUsername,
+    validateEmail,
+    checkIfIdentifierIsInUse,
+    updateUserDetails
+  )
+  .delete(deleteUser);
 
 export default router;
