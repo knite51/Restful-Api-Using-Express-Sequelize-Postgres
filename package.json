@@ -5,8 +5,13 @@
   "repository": "https://github.com/knite51/Restful-Api-Using-Express-Sequelize-Postgres.git",
   "author": "kNiteDeveloper",
   "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "scripts": {
-    "dev": "nodemon node_modules/babel-watch ./ server.js",
+    "dev": "babel-watch --watch ./ server.js",
+    "set-node-env": "set NODE_ENV=test",
+    "test": " yarn run set-node-env && jest --verbose --silent",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",
     "undo:migration": "node_modules/.bin/sequelize db:migrate:undo:all",
     "start": "npm run build && node ./build/server.js"
@@ -19,6 +24,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "jest": "^22.4.3",
     "morgan": "^1.9.1",
     "pg": "^7.8.0",
     "pg-hstore": "^2.3.2",
@@ -33,6 +39,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
-    "nodemon": "^1.18.10"
+    "faker": "^4.1.0",
+    "supertest": "^3.4.2"
   }
 }
